@@ -20,5 +20,10 @@ namespace Library.Models
             this.Name = Name;
             this.Genre = Genre;
         }
+
+        override public string ToString()
+        {
+            return $"{Id}: {Name} - {Genre.ToString()}";
+        }
     }
 }

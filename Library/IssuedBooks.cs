@@ -7,11 +7,21 @@ namespace Library
 {
     public class IssuedBooks
     {
-        public List<IBook> books { get; set; }
+        private List<IBook> _books;
 
         public IssuedBooks()
         {
-            books = new List<IBook>();
+            _books = new List<IBook>();
+        }
+
+        public void Add(IBook book)
+        {
+            _books.Add(book);
+        }
+
+        public List<IBook> GetAllBooks()
+        {
+            return _books;
         }
     }
 }

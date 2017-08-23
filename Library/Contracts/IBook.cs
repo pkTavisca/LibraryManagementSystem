@@ -10,5 +10,6 @@ namespace Library.Contracts
         int Id { get; }
         string Name { get; }
         Genre Genre { get; }
+        string ToString();
     }
 }

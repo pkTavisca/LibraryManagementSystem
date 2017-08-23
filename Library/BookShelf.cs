@@ -7,16 +7,16 @@ namespace Library
 {
     public class BookShelf
     {
-        public List<IBook> books { get; set; }
+        private List<IBook> _books;
 
-        public BookShelf()
+        public BookShelf(List<IBook> books)
         {
-            books = new List<IBook>();
+            _books = books ?? new List<IBook>();
         }
 
         public bool IsBookPresent(IBook book)
         {
-            foreach (var bookInShelf in books)
+            foreach (var bookInShelf in _books)
             {
                 if (bookInShelf.Id == book.Id) return true;
             }
@@ -25,14 +25,19 @@ namespace Library
 
         public void TakeOut(IBook book)
         {
-            for (int i = 0; i < books.Count; i++)
+            for (int i = 0; i < _books.Count; i++)
             {
-                if (books[i].Id == book.Id)
+                if (_books[i].Id == book.Id)
                 {
-                    books.RemoveAt(i);
+                    _books.RemoveAt(i);
                     break;
                 }
             }
+        }
+
+        public List<IBook> GetAllBooks()
+        {
+            return _books;
         }
     }
 }

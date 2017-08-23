@@ -10,7 +10,7 @@ namespace Library
 
         public Librarian(BookShelf bookShelf)
         {
-            _bookShelf = bookShelf ?? new BookShelf();
+            _bookShelf = bookShelf ?? new BookShelf(null);
             _issuedBooks = new IssuedBooks();
         }
 
